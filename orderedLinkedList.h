@@ -1,3 +1,4 @@
+//Lillian Webb and Owen Rodstrom
 #ifndef H_orderedListType
 #define H_orderedListType
 
@@ -47,7 +48,79 @@ public:
       //    of the new list, and count is decremented by 1. If
       //    deleteItem is not in the list, an appropriate message
       //    is printed.
+
+    void mergeLists(orderedLinkedList<Type> &list1,
+         orderedLinkedList<Type> &list2);
+    //This function creates a new list by merging the
+    //elements of list1 and list2.
+nodeType<Type>*current1 = list1.first;
+nodeType<Type>*current2 = list2.first;
+nodeType<Type>*new_node;
+    //Postcondition: first points to the merged list; list1
+    // and list2 are empty
+while(current1 != nullptr && current2 != nullptr){
+    //Creates new node
+    if(current1 -> info <= current2 -> info){
+        newNode = new nodeType<Type>;
+        newNode ->info = current1->info;
+        current1 = current1->link; //This iterates to the next item.
+    }
+    else {
+        newNode = new nodeType<Type>;
+        newNode-> = current2 ->info;
+        current2 =current2 -> link; //This iterates to the next item.
+    }
+    }
+
+//Append the new nodes to the merged list
+newNode ->link = nullptr;
+if(newList->first ==nullptr) {//if this is the first
+    newList->first =newNode;
+    newList -> last =newNode;
+}
+else{
+    newList ->last -> link =newNode;
+    newList ->last = newNode;
+}
+newList -> int count ++; //iterates count of new list
+while (current1 != nullptr) {
+    newNode = new nodeType<Type>;
+    newNode ->info = current -> info;
+    newNode ->link =nullptr;
+if(first ==nullptr){//If this is the first node
+    newList ->first =newNode;
+    newList ->last =newNode;
+    count++;
+    current1 =current1 ->link; //Move to the next node in list 1
+}
+    else{
+        newList->last-> link =newNode;
+        newList->last =newNode; //update last point
+        count++;
+        current = current1 -> link; //move to the next node in list 1
+    }
+while (current2 != nullptr) {
+    newNode = new nodeType<Type>;
+    newNode ->info = current2 ->info;
+    newNode ->link =nullptr;
+if(first == nullptr){
+    first =newNode;
+    last =NewNode;
+    count++
+    current2=current2 ->link;
+}
+    else{
+        last->link=newNode;
+        last=newNode;//Updates pointer
+        count++
+        current2= current2 -> link; 
+}
+//Empty list1 and list2
+
+}
 };
+
+
 
 template <class Type>
 bool orderedLinkedList<Type>::search(const Type& searchItem) const
