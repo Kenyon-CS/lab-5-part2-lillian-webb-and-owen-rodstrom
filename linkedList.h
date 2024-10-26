@@ -151,6 +151,10 @@ public:
       //               terminates; otherwise, the last  
       //               element of the list is returned.
 
+    virtual void mergeLists(orderedLinkedList<Type> &list1,
+      orderedLinkedList<Type> &list2);
+    //Function to merge two lists in order of smallest to largest element
+
     virtual bool search(const Type& searchItem) const = 0;
       //Function to determine whether searchItem is in the list.
       //Postcondition: Returns true if searchItem is in the list,
