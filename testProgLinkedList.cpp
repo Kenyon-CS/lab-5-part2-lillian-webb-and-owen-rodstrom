@@ -13,7 +13,7 @@ using namespace std;                            //Line 3
 
 int main()                                      //Line 4
 {
-    orderedLinkedList<int> list1, list2;        //Line 5
+    orderedLinkedList<int> list1, list2, mergedList;        //Line 5
     int num;                                    //Line 6
 
     cout << "Line 7: Enter numbers ending "
@@ -49,6 +49,22 @@ int main()                                      //Line 4
          << num << ", list2: " << endl;         //Line 26
     list2.print();                              //Line 27
     cout << endl;                               //Line 28
+    
+    //Here begins the test for merg
+    mergedList.mergeLists(list1, list2);
+    cout << "List 1 before merging:";
+    list1.print();
+    cout <<"\n List 2 before merging:";
+    list2.print();
+
+    //Merge list1 and list 2 into mergedList
+    mergedList.print();
+
+    //Display list1 and list2 after merging to verify they are empty
+    cout << "\nList1 after merging (should be empty): ";
+    list1.print();
+    cout << "\nList2 after merging (should be empty):";
+    list2.print();
 
     return 0;					                //Line 29
 }                                               //Line 30
