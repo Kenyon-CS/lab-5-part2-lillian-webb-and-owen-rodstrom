@@ -50,7 +50,7 @@ public:
       //    is printed.
 
     void mergeLists(orderedLinkedList<Type> &list1,
-         orderedLinkedList<Type> &list2);
+         orderedLinkedList<Type> &list2){
     //This function creates a new list by merging the
     //elements of list1 and list2.
 nodeType<Type>*current1 = list1.first;
@@ -118,7 +118,8 @@ if(first == nullptr){
 //Empty list1 and list2
 
 }
-};
+}
+}
 
 
 
@@ -263,6 +264,6 @@ void orderedLinkedList<Type>::deleteNode(const Type& deleteItem)
                      << "list." << endl;
     }
 }//end deleteNode
-
+};
 
 #endif
